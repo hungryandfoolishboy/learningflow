@@ -4,7 +4,7 @@ import time
 from contextlib import contextmanager
 
 @jit
-def check_missing(dataframe, head=10):
+def check_missing_values(dataframe, head=10):
     total = dataframe.isnull().sum().sort_values(ascending=False)
     percent = (dataframe.isnull().sum()/ len(dataframe) * 100).sort_values(ascending=False)
     missing_application_train_data  = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])

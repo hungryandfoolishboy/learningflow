@@ -17,7 +17,7 @@ What's going on?
 
 ## Helpers \[[py](https://github.com/clotyxf/learningflow/tree/master/machine_learning/helpers.py)\]:
 
-> mixed check_missing(dataframe data, int head)
+> mixed check_missing_values(dataframe data, int head)
 ```
   print(missing values)
 ```
