@@ -19,5 +19,14 @@ What's going on?
 
 > mixed check_missing(dataframe data, int head)
 ```
-    print(missing values)
+  print(missing values)
+```
+> str timer(str title)
+```
+  with timer('xxx'):
+    pass
+```
+> mixed one_hot_encoder(dataframe df, bool nan_as_category)
+```
+  return new_dataframe, new_columns
 ```
