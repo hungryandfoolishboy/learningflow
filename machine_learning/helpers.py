@@ -22,7 +22,6 @@ def timer(title):
     print("{} - done in {:.0f}s".format(title, time.time() - t0))
 
 
-@jit
 def one_hot_encoder(df, nan_as_category=True):
     original_columns = list(df.columns)
     categorical_columns = [
@@ -53,7 +52,7 @@ def fix_missing_value(df, col, boosting_type='mean'):
 
 def freq_encoding(df, cols, drop=False):
     for col in cols:
-        col_freq = col + 'freq'
+        col_freq = col + '_freq'
         freq_df = df[col].value_counts()
         freq_df = pd.DataFrame(freq_df)
         freq_df.reset_index(inplace=True)
