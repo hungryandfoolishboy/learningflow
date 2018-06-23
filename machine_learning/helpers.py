@@ -63,7 +63,7 @@ def freq_encoding(df, cols, drop=False):
         if drop:
             df.drop([col], axis=1, inplace=True)
 
-    def freq_df
+    del freq_df
     gc.collect()
 
     return df
@@ -89,7 +89,7 @@ def binary_encoding(train_df, test_df, col):
     train_df = pd.merge(train_df, bin_df, how='left', on=[col])
     test_df = pd.merge(test_df, bin_df, how='left', on=[col])
 
-    def bin_df, col_bin
+    del bin_df, col_bin
     gc.collect()
 
     return train_df, test_df
