@@ -26,7 +26,16 @@ What's going on?
   with timer('xxx'):
     pass
 ```
-> mixed one_hot_encoder(dataframe df, bool nan_as_category)
+> mixed one_hot_encoder(dataframe df, boolean nan_as_category)
 ```
   return new_dataframe, new_columns
+```
+> mixed freq_encoding(dataframe df, list cols, boolean drop=False)
+
+```
+  return new_dataframe
+```
+> mixed def binary_encoding(dataframe train_df, dataframe test_df, str col)
+```
+  return new_train_df, new_test_df
 ```
