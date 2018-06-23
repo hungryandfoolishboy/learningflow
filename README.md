@@ -21,21 +21,30 @@ What's going on?
 ```
   print(missing values)
 ```
+
 > str timer(str title)
 ```
   with timer('xxx'):
     pass
 ```
+
+> mixed fix_missing_value(dataframe df, str col, str boosting_type='mean')
+```
+  return new_dataframe
+```
+
 > mixed one_hot_encoder(dataframe df, boolean nan_as_category)
 ```
   return new_dataframe, new_columns
 ```
+
 > mixed freq_encoding(dataframe df, list cols, boolean drop=False)
 
 ```
   return new_dataframe
 ```
-> mixed def binary_encoding(dataframe train_df, dataframe test_df, str col)
+
+> mixed binary_encoding(dataframe train_df, dataframe test_df, str col)
 ```
   return new_train_df, new_test_df
 ```
