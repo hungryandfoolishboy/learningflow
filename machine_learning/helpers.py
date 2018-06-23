@@ -50,7 +50,7 @@ def fix_missing_value(df, col, boosting_type='mean'):
     return df
 
 
-def freq_encoding(df, cols, drop=True):
+def freq_encoding(df, cols, drop=False):
     for col in cols:
         col_freq = col + '_freq'
         freq_df = df[col].value_counts()
@@ -58,13 +58,15 @@ def freq_encoding(df, cols, drop=True):
         freq_df.reset_index(inplace=True)
         freq_df.columns = [[col, col_freq]]
 
-        freq_df = pd.merge(df[[col]], freq_df, how='left', on=col)
+        df = pd.merge(df[[col]], freq_df, how='left', on=col)
         if drop:
-            freq_df.drop([col], axis=1, inplace=True)
-    df=pd.concat([df, freq_df], axis=1)
+            df.drop([col], axis=1, inplace=True)
+
     del freq_df
     gc.collect()
+
     return df
+
 
 def binary_encoding(train_df, test_df, col):
     union_val = np.union1d(train_df[col].unique(), test_df[col].unique())
