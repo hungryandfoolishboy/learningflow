@@ -3,6 +3,7 @@ What's going on?
 
   * [Machine learning](#machine_learning)
   * [Feature engineering](#feature_engineering)
+  * [Helpers](#helpers)
 
 ## Machine learning \[[leaderboard](https://github.com/clotyxf/learningflow/tree/master/machine_learning/README.md)\]:
 
@@ -13,3 +14,10 @@ What's going on?
 ## Feature engineering \[[leaderboard](https://github.com/clotyxf/learningflow/tree/master/machine_learning/README.md)\]:
 
 * Feature selection _2018.06_ \[[ipynb](https://github.com/clotyxf/learningflow/tree/master/machine_learning/feature_selection.ipynb)\]
+
+## Helpers \[[py](https://github.com/clotyxf/learningflow/tree/master/machine_learning/helpers.py)\]:
+
+> mixed check_missing(dataframe data, int head)
+```
+    print(missing values)
+```
