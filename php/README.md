@@ -8,6 +8,8 @@
 ```
 mkdir socket.io
 
+cd socket.io
+
 npm install ioredis
 
 npm install socket.io@1.5.0
