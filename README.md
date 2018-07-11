@@ -49,3 +49,8 @@ What's going on?
 ```
   return new_train_df, new_test_df
 ```
+
+> mixed  _corr_matrix(dataframe df, float threshold=0.9)
+```
+  return drop_columns
+```

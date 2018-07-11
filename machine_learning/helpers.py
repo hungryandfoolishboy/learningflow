@@ -92,3 +92,10 @@ def binary_encoding(train_df, test_df, col):
     gc.collect()
 
     return train_df, test_df
+
+
+def _corr_matrix(df, threshold=0.9):
+    corr_matrix = df.corr().abs()
+    upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(np.bool))
+    drop_columns = [column for column in upper.columns if any(upper[column] > threshold)]
+    return drop_columns
