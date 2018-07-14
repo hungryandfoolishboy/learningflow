@@ -1,6 +1,6 @@
 # Laravel Docker
 
-> git cline https://github.com/clotyxf/learningflow.git
+> git clone https://github.com/clotyxf/learningflow.git
 
 > cd laravel-docker
 
