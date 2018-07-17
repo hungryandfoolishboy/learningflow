@@ -20,7 +20,7 @@ cp config/ /usr/local/kafka_2.12-1.1.0/config/
 #### 3.kafka服务运行:
 3.1 启动 zookeeper
 ```
-bin/kafka-topics.sh --list --zookeeper localhost:2181
+bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 3.2 启动 server
 ```
@@ -40,4 +40,58 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 ```
 ```
 bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+```
+#### 4. 使用`supervisord`运行
+4.1 install
+```
+yum install supervisord
+```
+4.2修改配置文件 `vi /etc/supervisord.conf`
+```
+[include]
+;files = supervisord.d/*.ini
+files = /etc/supervisor/conf.d/*.conf
+```
+
+4.3 program配置 `vi /etc/supervisor/conf.d/kafka_server.conf`
+
+```
+[program:kafka-zookeeper-server]
+command = bin/zookeeper-server-start.sh config/zookeeper.properties
+autostart=true
+autorestart=true
+priority=5
+stdout_events_enabled=true
+stderr_events_enabled=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+directory=/usr/local/kafka_2.12-1.1.0/
+stopsignal=QUIT
+
+
+[program:kafka-server]
+command = bin/kafka-server-start.sh  config/server.properties
+autostart=true
+autorestart=true
+priority=5
+stdout_events_enabled=true
+stderr_events_enabled=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+directory=/usr/local/kafka_2.12-1.1.0/
+stopsignal=QUIT
+```
+4.4 运行 supervisord
+```
+supervisord -c /etc/supervisord.conf
+```
+
+4.5 查看运行状态 `supervisorctl status` 输出如下内容:
+```
+kafka-server                     RUNNING   pid 5007, uptime 0:07:15
+kafka-zookeeper-server           RUNNING   pid 5006, uptime 0:07:15
 ```
