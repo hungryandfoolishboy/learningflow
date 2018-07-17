@@ -85,7 +85,7 @@ stderr_logfile_maxbytes=0
 directory=/usr/local/kafka_2.12-1.1.0/
 stopsignal=QUIT
 ```
-4.4 运行 supervisord
+4.4 运行 `supervisord`
 ```
 supervisord -c /etc/supervisord.conf
 ```
