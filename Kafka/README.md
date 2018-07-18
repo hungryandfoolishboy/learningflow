@@ -1,5 +1,10 @@
 ## Kafka
 
+  * [install](install_kafka)
+  * [online train](https://github.com/clotyxf/learningflow/tree/master/Kafka/online_train/kernel.py)
+
+
+## Install Kafka
 #### 1.安装 kafka [kafka.apache.org](http://kafka.apache.org/)
 ```
 mkdir -p /usr/local/kafka_2.12-1.1.0/
