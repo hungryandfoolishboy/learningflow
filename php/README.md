@@ -2,7 +2,7 @@
 
 * [Laravel-docker](https://github.com/clotyxf/learningflow/tree/master/php/laravel-docker)
 * [Socket_io](#scoket_io)
-
+* [Laravel Server](https://github.com/clotyxf/learningflow/tree/master/php/laravel)
 ## Socket Io
 
 >install environment
