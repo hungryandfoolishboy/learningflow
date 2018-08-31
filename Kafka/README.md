@@ -14,6 +14,9 @@ cd /usr/local/kafka_2.12-1.1.0/
 wget http://apache.claz.org/kafka/1.1.0/kafka_2.12-1.1.0.tgz
 
 tar -xvf kafka_2.12-1.1.0.tgz
+
+yum install java-1.8.0-openjdk
+yum install java-1.8.0-openjdk-devel
 ```
 
 #### 2.复制配置文件到`kafka`目录下的`config`目录中:

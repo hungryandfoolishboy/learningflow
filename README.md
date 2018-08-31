@@ -4,6 +4,7 @@ What's going on?
   * [Machine learning](#machine-learning-leaderboard)
   * [Feature engineering](#feature-engineering-leaderboard)
   * [Helpers](#helpers-py)
+  * [Hadoop](https://github.com/clotyxf/learningflow/tree/master/Hadoop/README.md)
   * [Kafka](https://github.com/clotyxf/learningflow/tree/master/Kafka/README.md)
   * [PHP](https://github.com/clotyxf/learningflow/tree/master/php/README.md)
 
