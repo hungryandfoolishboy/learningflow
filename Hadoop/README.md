@@ -1,8 +1,6 @@
 ## hadoop
 
-  * [install](install_kafka)
-  * [online train](https://github.com/clotyxf/learningflow/tree/master/Kafka/online_train/kernel.py)
-
+  * [install](install_hadoop)
 
 ## Install Hadoop
 #### 1.安装 hadoop [hadoop.apache.org](http://hadoop.apache.org/releases.html)
