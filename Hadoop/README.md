@@ -230,6 +230,59 @@ sbin/start-dfs.sh
 sbin/start-yarn.sh
 ```
 
-可以登录网页查看：http：//master:50070 (查看live node)
+`netstat -nlp` 查看端口使用情况：
 
-查看yarn环境http：//master:8088
+```linux
+tcp        0      0 0.0.0.0:9867            0.0.0.0:*               LISTEN      11053/java          
+tcp        0      0 0.0.0.0:9868            0.0.0.0:*               LISTEN      11278/java          
+tcp        0      0 0.0.0.0:9870            0.0.0.0:*               LISTEN      10919/java          
+tcp        0      0 0.0.0.0:37775           0.0.0.0:*               LISTEN      11936/java          
+tcp        0      0 172.16.113.192:8088     0.0.0.0:*               LISTEN      11807/java          
+tcp        0      0 0.0.0.0:13562           0.0.0.0:*               LISTEN      11936/java          
+tcp        0      0 172.16.113.192:8030     0.0.0.0:*               LISTEN      11807/java          
+tcp        0      0 172.16.113.192:8031     0.0.0.0:*               LISTEN      11807/java          
+tcp        0      0 172.16.113.192:8032     0.0.0.0:*               LISTEN      11807/java          
+tcp        0      0 172.16.113.192:8033     0.0.0.0:*               LISTEN      11807/java          
+tcp        0      0 127.0.0.1:46406         0.0.0.0:*               LISTEN      11053/java          
+tcp        0      0 0.0.0.0:8040            0.0.0.0:*               LISTEN      11936/java          
+tcp        0      0 0.0.0.0:9864            0.0.0.0:*               LISTEN      11053/java          
+tcp        0      0 172.16.113.192:9000     0.0.0.0:*               LISTEN      10919/java          
+tcp        0      0 0.0.0.0:8042            0.0.0.0:*               LISTEN      11936/java          
+tcp        0      0 0.0.0.0:9866            0.0.0.0:*               LISTEN      11053/java          
+[root@master hadoop]# 
+
+```
+
+#
+可以登录网页查看：`http://master:50070` 或`http://master:9870` (查看live node)
+
+#
+查看yarn环境`http://master:8088`
+
+#
+## Q&A
+
+1.如果运行 `sbin/start-dfs.sh` 出现一下问题时，需要给配置`root`用户参数:
+
+```bash
+Starting namenodes on [localhost] 
+ERROR: Attempting to launch hdfs namenode as root 
+ERROR: but there is no HDFS_NAMENODE_USER defined. Aborting launch. 
+```
+
+`sbin/start-dfs.sh` 和 `sbin/stop-dfs.sh` 需要添加下面配置：
+
+```bash
+HDFS_DATANODE_USER=root
+HADOOP_SECURE_DN_USER=hdfs
+HDFS_NAMENODE_USER=root
+HDFS_SECONDARYNAMENODE_USER=root
+```
+
+`sbin/start-yarn.sh` 和 `sbin/stop-yarn.sh` 需要添加下面配置：
+
+```bash
+YARN_RESOURCEMANAGER_USER=root
+HADOOP_SECURE_DN_USER=yarn
+YARN_NODEMANAGER_USER=root
+```
