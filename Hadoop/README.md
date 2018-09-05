@@ -12,7 +12,7 @@ tar -xvf hadoop-3.1.1.tar.gz
 mv hadoop-3.1.1 hadoop
 ```
 
-1.1下载java
+1.1下载[java se](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 ```linux
 cd /opt
@@ -50,6 +50,9 @@ vi /etc/hosts
 
 #必须为内网地址
 x.x.x.x master
+# 如果是本地虚拟机则为：
+# 0.0.0.0  master
+
 #如部署集群 则需要加入集群主机名
 ```
 
@@ -64,12 +67,10 @@ systemctl status firewalld.service
 1.5新建hadoop所需目录
 
 ```linux
-mkdir  /home/hadoop
-mkdir  /home/hadoop/tmp
-mkdir  /home/hadoop/var
-mkdir  /home/hadoop/dfs
-mkdir  /home/hadoop/dfs/name
-mkdir  /home/hadoop/dfs/data
+mkdir -p /home/hadoop/dfs/name
+mkdir /home/hadoop/dfs/data
+mkdir /home/hadoop/tmp
+mkdir /home/hadoop/var
 ```
 
 1.6修改`etc/hadoop`中的一系列配置文件
