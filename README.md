@@ -6,6 +6,7 @@ What's going on?
   * [Helpers](#helpers-py)
   * [Hadoop](https://github.com/clotyxf/learningflow/tree/master/Hadoop/README.md)
   * [Kafka](https://github.com/clotyxf/learningflow/tree/master/Kafka/README.md)
+  * [Flume](https://github.com/clotyxf/learningflow/tree/master/Flume/README.md)
   * [PHP](https://github.com/clotyxf/learningflow/tree/master/php/README.md)
 
 ## Machine learning \[[leaderboard](https://github.com/clotyxf/learningflow/tree/master/machine_learning/README.md)\]:
