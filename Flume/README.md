@@ -1,6 +1,6 @@
 # Flume + KafKa
 
-flume + kafka 实现监控服务器日志
+flume + kafka 实现收集服务器日志
 
   * [Kafka](https://github.com/clotyxf/learningflow/tree/master/Kafka/README.md)
   * [Flume](#flume)
